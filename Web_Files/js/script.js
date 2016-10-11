@@ -3,6 +3,7 @@
  */
 "use strict";
 
+
 var userAgent = navigator.userAgent.toLowerCase(),
     initialDate = new Date(),
 
@@ -58,7 +59,6 @@ var userAgent = navigator.userAgent.toLowerCase(),
       customWaypoints: $('[data-custom-scroll-to]'),
       photoSwipeGallery: $("[data-photo-swipe-item]"),
       circleProgress: $(".progress-bar-circle"),
-      stepper: $("input[type='number']"),
       radio: $("input[type='radio']"),
       checkbox: $("input[type='checkbox']"),
       customToggle: $("[data-custom-toggle]"),
@@ -72,7 +72,26 @@ var userAgent = navigator.userAgent.toLowerCase(),
 /**
  * Initialize All Scripts
  */
+ var toggle3 = 0 ;
+
 $document.ready(function () {
+
+  $('[data-toggle="tooltip"]').tooltip(); 
+
+  $('input[type="button"]').click(function(event) {
+    /* Act on the event */
+    if (!$(this).hasClass('active')) {
+      $('input[type="button"], .active').removeClass('active');
+      $(this).toggleClass('active');
+      toggle3 = (toggle3+1)%2;
+      console.log(toggle3);
+      changeBodyText();
+    }
+  });
+  $('#data').on('input',function(e){
+    changeBodyText();
+  });
+
 
   /**
    * getSwiperHeight
@@ -626,18 +645,7 @@ $document.ready(function () {
     }
   }
 
-  /**
-   * Stepper
-   * @description Enables Stepper Plugin
-   */
-  if (plugins.stepper.length) {
-    plugins.stepper.stepper({
-      labels: {
-        up: "",
-        down: ""
-      }
-    });
-  }
+
 
   /**
    * Radio
@@ -1667,3 +1675,16 @@ $document.ready(function () {
   }
 });
 
+function changeBodyText(){
+    var val = 0;
+    if (!toggle3) {
+      val = $("#data").val()/8.5;
+      val = +val.toFixed(2);
+      val += " KWh";
+    }else{
+      val = $("#data").val() * 8.5;
+      val = +val.toFixed(2);
+      val += " m&#178;";
+    }
+    $('.output').html(val);
+}
