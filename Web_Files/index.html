@@ -41,13 +41,13 @@
   </head>
   <body>
   <!-- Social Icons -->
-  <ul id="social_side_links">
+    <ul id="social_side_links">
     <li><a style="background-color: #3c5a96;" href="http://facebook.com" target="_blank"><img src="images/facebook-icon.png" alt="" /></a></li>
     <li><a style="background-color: #1dadeb;" href="http://twitter.com" target="_blank"><img src="images/twitter-icon.png" alt="" /></a></li>
     <li><a style="background-color: #1178b3;" href="http://linkedin.com" target="_blank"><img src="images/linkedin-icon.png" alt="" /></a></li>
     <li><a style="background-color: #E0F2F1;" href="contacts.html"><img src="images/contact-phone-icon.png" alt=""/></a></li>
     <li><a style="background-color: #3c6a92;" href="contacts.html"><img src="images/mail.png" alt=""/></a></li>
-  </ul>
+    </ul>
     <!-- Page-->
     <div class="page text-center">
       <!-- Page Header-->
@@ -123,7 +123,12 @@
                       <div class="cell-sm-10 cell-lg-6">
                         <h1 class="offset-lg-top-34 offset-xl-top-0"><span class="text-uppercase text-spacing-50">If you are</span></h1>
                         <h4 class="text-regular text-uppercase offset-top-20 offset-md-top-34 text-spacing-75">Among These, <br class="veil reveal-lg-inline-block"> Then, You Need Us!</h4>
-                        <div class="group-lg offset-top-34"><a href="estimate-your-solar-savings.html" class="btn btn-calculate btn-default h4 text-uppercase text-spacing-150">Calculate My Savings</a><a href="get-quote-form.html" class="btn btn-icon btn-icon-right btn-zip-code btn-default text-spacing-25"><span class="icon icon-rotate mdi mdi-keyboard-backspace"></span>Get A Quote</a></div>
+                        <div class="group-lg offset-top-34"><a href="estimate-your-solar-savings.html" class="btn btn-calculate btn-default h4 text-uppercase text-spacing-150">Calculate My Savings</a>
+
+                          <a href="#openModal" class="btn btn-icon btn-icon-right btn-zip-code btn-default text-spacing-25">
+                            <span class="icon icon-rotate mdi mdi-keyboard-backspace"></span>Get A Quote
+                          </a>
+                        </div>
                         <p class="veil reveal-sm-block veil-lg reveal-xl-block text-spacing-50 offset-top-20 offset-md-top-42 inset-lg-right-105">Our free, no obligation, solar installation quotes are provided by the top solar installers</p>
                       </div>
                     </div>
@@ -493,6 +498,18 @@
             <div class="pswp__caption__cent"></div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div id="openModal" class="modalDialog">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <div>
+          <input type="button" value = "Enter Rooftop Area" style="margin-right: 2.5%" class="active"></input>
+          <input type="button" value = "Enter Load" style="margin-left: 2.5%"></input>
+        </div>
+        <input type="number" placeholder = "Enter Data" id="data"></input>
+        <div class="output">0 KWh</div>
       </div>
     </div>
     <!-- Java script-->

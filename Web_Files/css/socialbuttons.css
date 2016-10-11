@@ -29,3 +29,85 @@
     display: none;
   }
 }
+
+/* ---------------Modal---------------*/
+.modalDialog {
+  position: fixed;
+  font-family: "Roboto";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  pointer-events: none;
+}
+body{
+  color:#fff;
+}
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
+.modalDialog > div {
+  font-family: 'Roboto', sans-serif;
+  width: 30%;
+  position: relative;
+  margin: 10% auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(66,117,157,0.8);
+  background: #6595ba;
+} 
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  box-shadow: 1px 1px 3px #000;
+}
+.close:hover { background: #00d9ff; }
+
+input[type="button"]{
+  color: #fff;
+  background: #F45742;
+  width: 45%;
+  height: 3em;
+  font-size: 17px;
+  border-radius: 3px;
+  outline: none;
+  border:none;
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.5s;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.8);
+}
+input[type="number"]{
+  color: #000;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 86% !important;
+  height: 3em;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 17px;
+  border-radius: 3px;
+  outline: none;
+  border:none;
+  box-shadow: inset 0px 1px 5px rgba(0,0,0,0.8);
+  font-family: 'Roboto', sans-serif;
+}
+
+.active{
+  background: #F4B35D !important;
+  box-shadow: inset 0px 2px 8px rgba(0,0,0,0.6) !important;
+  transition: all 0.5s;
+}
