@@ -84,7 +84,6 @@ $document.ready(function () {
       $('input[type="button"], .active').removeClass('active');
       $(this).toggleClass('active');
       toggle3 = (toggle3+1)%2;
-      console.log(toggle3);
       changeBodyText();
     }
   });
